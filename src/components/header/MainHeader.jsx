@@ -4,13 +4,14 @@ import MenuIcon from '@/components/icons/MenuIcon';
 import CartIcon from '@/components/icons/CartIcon';
 import CloseMenu from '@/components/icons/CloseMenu';
 import { useState } from 'react';
+import NavLinkHeader from '@/components/header/NavLinkHeader';
 
 const MainHeader = () => {
 
     const [navClass, setNavClass] = useState('hidden font-bold md:static md:mr-auto md:flex md:h-auto md:flex-row md:gap-4 md:p-0')
 
     const handleOpenMenu = () => {
-        setNavClass('bg-white absolute top-0 left-0 flex flex-col md:mr-auto md:flex md:gap-4 md:flex-row h-full p-8 gap-y-[21px] font-bold w-4/5 md:static md:p-0')
+        setNavClass('bg-white absolute top-0 left-0 flex flex-col md:mr-auto md:flex md:gap-4 md:flex-row h-full p-8 gap-y-[1.3125rem] font-bold w-4/5 md:static md:p-0')
     }
     const handleCloseMenu = () => {
         setNavClass('hidden font-bold md:static md:mr-auto md:flex md:h-auto md:flex-row md:gap-4 md:p-0')
@@ -18,7 +19,7 @@ const MainHeader = () => {
 
     return (
         <>
-            <header className='flex container mx-auto px-4 items-center gap-8 bg-gray-200 py-8'>
+            <header className='flex container mx-auto items-center gap-8 md:py-0 p-4'>
                 <button className='md:hidden' onClick={handleOpenMenu}>
                     <MenuIcon />
                 </button>
@@ -27,19 +28,20 @@ const MainHeader = () => {
                     <button className='mb-8 md:hidden' onClick={handleCloseMenu}>
                         <CloseMenu />
                     </button>
-                    <a href="#">Collections</a>
-                    <a href="#">Men</a>
-                    <a href="#">Women</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                    <NavLinkHeader text='Collections'/>
+                    <NavLinkHeader text='Men'/>
+                    <NavLinkHeader text='Women'/>
+                    <NavLinkHeader text='About'/>
+                    <NavLinkHeader text='Contact'/>
                 </nav>
                 <div className='flex gap-4'>
                     <button>
                         <CartIcon />
                     </button>
-                    <img className='w-12' src={avatar} alt="" />
+                    <img className='w-12' src={avatar} alt="Avatar" />
                 </div>
             </header>
+            <span className='w-full h-[1px] bg-gray-500 md:block container mx-auto hidden'></span>
         </>
     )
 }
