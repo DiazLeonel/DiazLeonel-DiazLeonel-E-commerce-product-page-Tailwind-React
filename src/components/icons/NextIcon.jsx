@@ -8,7 +8,7 @@ const NextIcon = (props) => {
             <path
                 d="m2 1 8 8-8 8"
                 stroke="#1D2026"
-                stroke-width="3"
+                strokeWidth="3"
                 fill="none"
                 fillRule="evenodd" />
         </svg>
